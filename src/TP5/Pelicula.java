@@ -1,24 +1,27 @@
 package TP5;
 
 public class Pelicula {
-    private int id;
+	private static int nroPeli = 0;
+	private final int id;
     private String nombrePelicula;
     private Categoria categoria;
 
-    public Pelicula() { }
-
-    public Pelicula(int id, String nombrePelicula, Categoria categoria) {
-        this.id = id;
+    public Pelicula(){
+    	nroPeli ++;
+    	this.id = nroPeli;
+    	this.nombrePelicula = "";
+    	categoria = new Categoria();
+    }
+    
+    public Pelicula(String nombrePelicula, Categoria categoria) {
+        nroPeli ++;
+        this.id = nroPeli;
         this.nombrePelicula = nombrePelicula;
         this.categoria = categoria;
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombrePelicula() {

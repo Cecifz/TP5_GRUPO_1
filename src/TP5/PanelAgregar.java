@@ -6,27 +6,33 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PanelAgregar extends JPanel {
     private DefaultListModel<Pelicula> listModel;
 	private static final long serialVersionUID = 1L;
 	private JButton btnAceptar;
 	private JComboBox<String> cbGeneros;
+	private JLabel lblID;
+	private JLabel lblNombre;
+	private JLabel lblGenero;
 	private JLabel lblIdAutomatico;
 	private JTextField textFieldNombre;
+	private Pelicula pelicula;
 	
 	public PanelAgregar() {
 		setLayout(null);
-		
-		JLabel lblID = new JLabel("ID");
+		//Labels
+		lblID = new JLabel("ID");
 		lblID.setBounds(90, 63, 46, 14);
 		add(lblID);
 		
-		JLabel lblNombre = new JLabel("Nombre");
+		lblNombre = new JLabel("Nombre");
 		lblNombre.setBounds(90, 98, 46, 14);
 		add(lblNombre);
 		
-		JLabel lblGenero = new JLabel("Genero");
+		lblGenero = new JLabel("Genero");
 		lblGenero.setBounds(90, 135, 46, 14);
 		add(lblGenero);
 		
@@ -35,16 +41,24 @@ public class PanelAgregar extends JPanel {
 		add(textFieldNombre);
 		textFieldNombre.setColumns(10);
 		
-		JLabel lblIdAutomatico = new JLabel();
+		lblIdAutomatico = new JLabel();
+		pelicula = new Pelicula();
+		lblIdAutomatico.setText(Integer.toString(pelicula.getId()));
 		lblIdAutomatico.setBounds(200, 63, 181, 14);
 		
 		add(lblIdAutomatico);
 		
-		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar = new JButton("Aceptar");
 		btnAceptar.setBounds(92, 179, 187, 23);
 		add(btnAceptar);
 		
-		cbGeneros = new JComboBox();
+		cbGeneros = new JComboBox<String>();
+		cbGeneros.addItem("Seleccione un genero");
+		cbGeneros.addItem("Terror");
+		cbGeneros.addItem("Accion");
+		cbGeneros.addItem("Suspenso");
+		cbGeneros.addItem("Romantica");
+		
 		cbGeneros.setBounds(201, 131, 181, 23);
 		add(cbGeneros);
 		

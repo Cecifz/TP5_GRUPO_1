@@ -8,9 +8,23 @@ public class Categoria {
 
     public Categoria() { }
 
-    public Categoria(int id, String nombreCategoria) {
+    public Categoria(int id) {
         this.id = id;
-        this.nombreCategoria = nombreCategoria;
+        switch(id) {
+        case 1:
+        	nombreCategoria= "Terror";
+        	break;
+        case 2:
+        	nombreCategoria= "Accion";        	
+        	break;
+        case 3:
+        	nombreCategoria= "Suspenso";
+        	break;
+        case 4:
+        	nombreCategoria= "Romantica";
+        	break;
+        }
+        
     }
 
     public int getId() {
