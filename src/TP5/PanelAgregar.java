@@ -11,6 +11,7 @@ public class PanelAgregar extends JPanel {
     private DefaultListModel<Pelicula> listModel;
 	private static final long serialVersionUID = 1L;
 	private JButton btnAceptar;
+	private JComboBox<String> cbGeneros;
 	private JLabel lblIdAutomatico;
 	private JTextField textFieldNombre;
 	
@@ -34,13 +35,18 @@ public class PanelAgregar extends JPanel {
 		add(textFieldNombre);
 		textFieldNombre.setColumns(10);
 		
-		JLabel lblIdAutomatico = new JLabel("ID Automático");
+		JLabel lblIdAutomatico = new JLabel();
 		lblIdAutomatico.setBounds(200, 63, 181, 14);
+		
 		add(lblIdAutomatico);
 		
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.setBounds(92, 179, 187, 23);
 		add(btnAceptar);
+		
+		cbGeneros = new JComboBox();
+		cbGeneros.setBounds(201, 131, 181, 23);
+		add(cbGeneros);
 		
 	}
 	public void setDefaultListModel(DefaultListModel<Pelicula> listModelRecibido) 
