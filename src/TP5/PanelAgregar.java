@@ -8,8 +8,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+
 
 public class PanelAgregar extends JPanel {
   private DefaultListModel<Pelicula> listModel;
@@ -45,7 +45,10 @@ public class PanelAgregar extends JPanel {
 		lblIdAutomatico = new JLabel();
 		lblIdAutomatico.setBounds(200, 63, 181, 14);
 		add(lblIdAutomatico);
+		lblIdAutomatico.setText(Integer.toString(Pelicula.proximoID()));
 		btnAceptar = new JButton("Aceptar");
+
+
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			Boolean encontrado = false;
@@ -61,7 +64,7 @@ public class PanelAgregar extends JPanel {
 						if(!encontrado)
 						{
 							pelicula = new Pelicula();
-							lblIdAutomatico.setText(Integer.toString(pelicula.getId()));
+							lblIdAutomatico.setText(Integer.toString(Pelicula.proximoID()));
 							pelicula.setNombrePelicula(textFieldNombre.getText());
 							pelicula.setCategoria(cbGeneros.getSelectedIndex(),cbGeneros.getSelectedItem().toString());
 							listModel.addElement(pelicula);

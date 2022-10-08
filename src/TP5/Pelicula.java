@@ -2,7 +2,7 @@ package TP5;
 
 public class Pelicula {
 	private static int nroPeli = 0;
-	private final int id;
+	private static int id;
     private String nombrePelicula;
     private Categoria categoria;
 
@@ -40,6 +40,10 @@ public class Pelicula {
     	
         this.categoria.setId(Cat);
         this.categoria.setNombreCategoria(NombreCat);
+    }
+
+    static int proximoID() {
+        return id + 1;
     }
 
     @Override
