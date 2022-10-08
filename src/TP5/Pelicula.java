@@ -36,8 +36,10 @@ public class Pelicula {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
+    public void setCategoria(int Cat,String NombreCat) {
+    	
+        this.categoria.setId(Cat);
+        this.categoria.setNombreCategoria(NombreCat);
     }
 
     @Override

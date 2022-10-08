@@ -24,6 +24,7 @@ public class VentanaPrincipal extends JFrame {
         	public void actionPerformed(ActionEvent arg0) {
         		contentPanel.removeAll();
         		PanelAgregar panel = new PanelAgregar();
+        		listModel= new DefaultListModel<Pelicula>();
         		panel.setDefaultListModel(listModel);
         		contentPanel.add(panel);
         		contentPanel.repaint();
@@ -37,8 +38,6 @@ public class VentanaPrincipal extends JFrame {
         contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPanel.setLayout(new BorderLayout(0,0));
         setContentPane(contentPanel);     
-
-
 
     }
 
