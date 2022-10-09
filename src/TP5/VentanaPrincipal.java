@@ -14,7 +14,7 @@ public class VentanaPrincipal extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
         contentPanel = new JPanel();
-
+        listModel= new DefaultListModel<Pelicula>();
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
         JMenu menu = new JMenu("Películas");
@@ -24,7 +24,6 @@ public class VentanaPrincipal extends JFrame {
         	public void actionPerformed(ActionEvent arg0) {
         		contentPanel.removeAll();
         		PanelAgregar panel = new PanelAgregar();
-        		listModel= new DefaultListModel<Pelicula>();
         		panel.setDefaultListModel(listModel);
         		contentPanel.add(panel);
         		contentPanel.repaint();
@@ -33,6 +32,16 @@ public class VentanaPrincipal extends JFrame {
         });
         menu.add(menuItemAgregar);
         JMenuItem menuItemListar = new JMenuItem("Listar");
+        menuItemListar.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		contentPanel.removeAll();
+        		PanelListar panel = new PanelListar();
+        		panel.setListModel(listModel);
+        		contentPanel.add(panel);
+        		contentPanel.repaint();
+        		contentPanel.revalidate();
+        	}
+        });
         menu.add(menuItemListar);
         contentPanel = new JPanel();
         contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

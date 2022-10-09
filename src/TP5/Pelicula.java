@@ -2,7 +2,7 @@ package TP5;
 
 public class Pelicula {
 	private static int nroPeli = 0;
-	private static int id;
+	private int id;
     private String nombrePelicula;
     private Categoria categoria;
 
@@ -43,11 +43,11 @@ public class Pelicula {
     }
 
     static int proximoID() {
-        return id + 1;
+        return nroPeli + 1;
     }
 
     @Override
     public String toString() {
-        return "Categoria : Id = " + id + ", Nombre = " + nombrePelicula + ", Categoria = " + categoria;
+        return  nombrePelicula + " - " + categoria + " - " + id;
     }
 }
